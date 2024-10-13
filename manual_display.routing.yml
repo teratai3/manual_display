@@ -1,0 +1,7 @@
+manual_display.admin.index:
+  path: '/admin/manual_display'
+  defaults:
+    _controller: '\Drupal\manual_display\Controller\Admin\ManualDisplayController::index'
+    _title: 'Drupalマニュアル'
+  requirements:
+    _permission: 'manual_display view_content'

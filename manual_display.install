@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * このファイルは、インストール中にシステム要件をチェックします。.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function manual_display_requirements($phase) {
+  $requirements = [];
+  if ($phase === 'install') {
+    // php-markdownライブラリが存在するかチェック.
+    if (!class_exists('Michelf\Markdown')) {
+      $requirements['php_markdown_library'] = [
+        'title' => t('Drupal'),
+        'value' => \Drupal::VERSION,
+        'description' => t('PHP Markdown ライブラリ (michelf/php-markdown) がインストールされていません。 Composer 経由でインストールしてください（<a href=":url" target="_blank">:url</a>）', [
+          ':url' => 'https://github.com/michelf/php-markdown',
+        ]),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+    else {
+      $requirements['php_markdown_library'] = [
+        'title' => t('Drupal'),
+        'value' => \Drupal::VERSION,
+        'description' => 'PHP Markdown ライブラリ (michelf/php-markdown) がインストールされています。使用可能です。',
+        'severity' => REQUIREMENT_OK,
+      ];
+    }
+  }
+  return $requirements;
+}
