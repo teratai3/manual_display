@@ -1,0 +1,3 @@
+manual_display view_content:
+  title: 'マニュアル表示ページの閲覧'
+  description: 'マニュアル表示ページの閲覧権限です。'
