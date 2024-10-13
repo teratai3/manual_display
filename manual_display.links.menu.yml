@@ -1,0 +1,10 @@
+manual_display.admin.index:
+  title: 'Drupalマニュアル'
+  description: 'マニュアルページ'
+  route_name: manual_display.admin.index
+  weight: 1
+  parent: system.admin
+  options:
+    attributes:
+      class:
+        - 'toolbar-icon-system-admin-content'
