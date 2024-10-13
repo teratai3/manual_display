@@ -1,0 +1,5 @@
+name: "manual_display"
+type: module
+description: "drupalの使い方の説明ページを追加します。"
+package: Custom
+core_version_requirement: ^10
